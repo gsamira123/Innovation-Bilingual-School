@@ -76,7 +76,8 @@
                         </div>
 
                         <div class="carousel-item">
-                            <p>“Es una institución que combina disciplina, valores y educación moderna, docentes de primera
+                            <p>“Es una institución que combina disciplina, valores y educación moderna, docentes de
+                                primera
                                 y con alta capacidad de aprendizaje bien formados y capacitados.”</p>
                             <strong>- Padre de familia</strong>
                         </div>
@@ -90,8 +91,9 @@
             <section id="nosotros" class="seccion">
                 <h2>Nuestro método educativo</h2>
                 <p class="descripcion-seccion">
-                    El Colegio <strong>Innovation Bilingual School</strong> de la ciudad de Santa Cruz de Yojoa ofrece una formación integral,
-                    combinando excelencia académica, tecnología, valores y aprendizaje bilingüe y muchos que 
+                    El Colegio <strong>Innovation Bilingual School</strong> de la ciudad de Santa Cruz de Yojoa ofrece
+                    una formación integral,
+                    combinando excelencia académica, tecnología, valores y aprendizaje bilingüe y muchos que
                     ayudaran a la formacion profesional del estudiante.
                 </p>
 
@@ -102,23 +104,29 @@
                     </div>
 
                     <div class="texto-nosotros">
-                        <h3>Misión</h3>
-                        <p>
-                            Brindar una educación bilingüe de calidad, formando estudiantes
-                            responsables, creativos y preparados para los retos del futuro.
-                        </p>
+                        <article class="valor-card" tabindex="0">
+                            <h3>Misión</h3>
+                            <p>
+                                Brindar una educación bilingüe de calidad, formando estudiantes
+                                responsables, creativos y preparados para los retos del futuro.
+                            </p>
+                        </article>
 
-                        <h3>Filosofía</h3>
-                        <p>
-                            Creemos en una enseñanza basada en competencias, innovación,
-                            pensamiento crítico y acompañamiento personalizado.
-                        </p>
+                        <article class="valor-card" tabindex="0">
+                            <h3>Filosofía</h3>
+                            <p>
+                                Creemos en una enseñanza basada en competencias, innovación,
+                                pensamiento crítico y acompañamiento personalizado.
+                            </p>
+                        </article>
 
-                        <h3>Enfoque educativo</h3>
-                        <p>
-                            Nuestro modelo integra idioma inglés, tecnología, robótica,
-                            ciencias, valores y participación activa de los estudiantes.
-                        </p>
+                        <article class="valor-card" tabindex="0">
+                            <h3>Enfoque educativo</h3>
+                            <p>
+                                Nuestro modelo integra idioma inglés, tecnología, robótica,
+                                ciencias, valores y participación activa de los estudiantes.
+                            </p>
+                        </article>
                     </div>
                 </article>
             </section>
@@ -158,8 +166,8 @@
 
                     <article class="tarjeta">
                         <div class="contenedor-imagen">
-                            <img src="/fotos/2018_05_29_ALTA_RESOLUCION_0088-scaled (convert.io).webp" width="250" height="160" loading="lazy"
-                                alt="Secundaria y bachillerato">
+                            <img src="/fotos/2018_05_29_ALTA_RESOLUCION_0088-scaled (convert.io).webp" width="250"
+                                height="160" loading="lazy" alt="Secundaria y bachillerato">
                         </div>
                         <h3>Secundaria y Bachillerato</h3>
                         <p>
@@ -170,8 +178,8 @@
 
                     <article class="tarjeta">
                         <div class="contenedor-imagen">
-                            <img src="/fotos/Hillel-STEM-camp_0070-scaled (convert.io).webp" width="250" height="160" loading="lazy"
-                                alt="Laboratorios STEM y robótica">
+                            <img src="/fotos/Hillel-STEM-camp_0070-scaled (convert.io).webp" width="250" height="160"
+                                loading="lazy" alt="Laboratorios STEM y robótica">
                         </div>
                         <h3>Laboratorios STEM</h3>
                         <p>
@@ -254,32 +262,43 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const formulario = document.querySelector('.formulario');
+    document.addEventListener('DOMContentLoaded', function () {
+        const formulario = document.querySelector('.formulario');
 
-            formulario.addEventListener('submit', function (event) {
-                event.preventDefault();
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault();
 
-                const encargado = document.getElementById('encargado').value.trim();
-                const aspirante = document.getElementById('aspirante').value.trim();
-                const grado = document.getElementById('grado').value;
-                const telefono = document.getElementById('telefono').value.trim();
-                const correo = document.getElementById('correo').value.trim();
-                const fecha = document.getElementById('fecha').value;
-                const mensaje = document.getElementById('mensaje').value.trim();
+            const numeroAdministradora = "5049939-6918";
 
-                if (!encargado || !aspirante || grado === 'Seleccione una opción' || !telefono || !fecha || !mensaje) {
-                    alert('Todos los campos son obligatorios.');
-                    return;
-                }
+            const encargado = document.getElementById('encargado').value.trim();
+            const aspirante = document.getElementById('aspirante').value.trim();
+            const grado = document.getElementById('grado').value;
+            const telefono = document.getElementById('telefono').value.trim();
+            const correo = document.getElementById('correo').value.trim();
+            const fecha = document.getElementById('fecha').value;
+            const mensaje = document.getElementById('mensaje').value.trim();
 
-                const textoWhatsApp = `Hola, soy ${encargado}. Me interesa la pre-matrícula para ${aspirante}.\n\nNivel de interés: ${grado}.\nCorreo: ${correo}.\nFecha para visita: ${fecha}.\nMensaje: ${mensaje}`;
-                const url = `https://api.whatsapp.com/send?phone=${encodeURIComponent(telefono)}&text=${encodeURIComponent(textoWhatsApp)}`;
+            if (!encargado || !aspirante || grado === 'Seleccione una opción' || !telefono || !fecha) {
+                alert('Por favor complete los campos obligatorios.');
+                return;
+            }
 
-                window.open(url, '_blank');
-            });
+            const textoWhatsApp =
+                "Hola, deseo recibir información sobre la pre-matrícula de Innovation Bilingual School.\n\n" +
+                "Nombre del encargado: " + encargado + "\n" +
+                "Nombre del aspirante: " + aspirante + "\n" +
+                "Nivel de interés: " + grado + "\n" +
+                "Teléfono: " + telefono + "\n" +
+                "Correo electrónico: " + correo + "\n" +
+                "Fecha para visita: " + fecha + "\n" +
+                "Mensaje adicional: " + mensaje;
+
+            const url = "https://api.whatsapp.com/send?phone=" + numeroAdministradora + "&text=" + encodeURIComponent(textoWhatsApp);
+
+            window.open(url, "_blank");
         });
-    </script>
+    });
+</script>
 </body>
 
 </html>
